@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;400;500;600;700&family=Lora:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --black: #181719;
+    --white: #fff;
+    --gray1: #A9A9A9;
+    --border-radius-complete: 50px;
+    --border-radius-top-bottom: 20px 4px;
+    --hamburguer-size: 50px;
+    --bar-hamburguer-height: 3px;
+    --bar-hamburguer-width: 25px;
+    --bar-separation: -8px;
+    --bg-hamburguer: #181719;
+    --bg-bar: #fff;
+}
+
+/* 
+font-family: 'Crimson Pro', serif;
+font-family: 'Lora', serif;
+font-family: 'Montserrat', sans-serif; 
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--black);
+}
+
+body,
+a {
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+p,
+h4 {
+    font-family: 'Montserrat', sans-se
+}
+
+h1 {
+    font-family: 'Crimson Pro', serif;
+}
+
+h2 {
+    font-family: 'Lora', serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+nav h1 {
+    font-size: 14px;
+    font-weight: 200;
+    padding: 7px 12px;
+    border: 1px solid var(--white);
+}
+
+nav .nav-link {
+    transition: all .5s ease-in-out;
+}
+
+nav .nav-link a {
+    margin-left: 50px;
+    font-weight: 200;
+    padding: 5px 0;
+}
+
+nav .nav-link a.home {
+    font-weight: 700;
+    border-bottom: 2px solid var(--white);
+}
+
+section {
+    margin-top: 20px;
+}
+
+section,
+section .container .row {
+    width: 100%;
+}
+
+section .row {
+    display: flex;
+    height: 380px;
+}
+
+section .row .col-1 {
+    width: 40%;
+    padding: 0 50px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+section .row .col-1 h2 {
+    font-size: 48px;
+    font-weight: 500;
+    margin-top: 0;
+}
+
+section .row .col-1 p {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+section .row .col-1 a {
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+}
+
+section .row .col-1 a img {
+    margin-left: 5px;
+}
+
+section .row .col-2 {
+    width: 60%;
+    position: relative;
+    padding: 0 0 0 100px;
+}
+
+section .row .col-2 .banner {
+    background-image: url(./images/photo1.png);
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-position: center;
+}
+
+section .row .col-2 .card {
+    position: absolute;
+    bottom: -20%;
+    right: 30px;
+    width: 400px;
+    height: 120px;
+    background: var(--black);
+    padding: 10px 15px 25px;
+    border-radius: 2px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+}
+
+section .row .col-2 .card .header {
+    display: flex;
+    align-items: center;
+}
+
+section .row .col-2 .card .header .info {
+    margin-left: 15px;
+}
+
+section .row .col-2 .card .header h4,
+section .row .col-2 .card .header p {
+    margin: 0;
+    font-weight: 500;
+}
+
+section .row .col-2 .card .header h4 {
+    font-size: 14px;
+}
+
+section .row .col-2 .card .header p {
+    font-size: 12px;
+    color: var(--gray1);
+}
+
+section .row .col-2 .card .body h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+section .row .col-2 .card .header .photo {
+    background-image: url(./images/photo2.png);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 30px;
+}
+
+footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .container p {
+    color: var(--gray1);
+}
+
+footer .container p a {
+    font-weight: 700;
+    color: var(--gray1);
+}
+
+.btn-hamburguer {
+    display: none;
+    align-items: center;
+    background: var(--bg-hamburguer);
+    /* display: flex; */
+    border-radius: var(--border-radius-top-bottom);
+    cursor: pointer;
+    height: var(--hamburguer-size);
+    justify-content: center;
+    position: fixed;
+    width: var(--hamburguer-size);
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    z-index: 50;
+    /* implementando a un componente */
+    /* top: 50px; */
+    right: 10px;
+}
+
+.btn-hamburguer .bar,
+.btn-hamburguer .bar::before,
+.btn-hamburguer .bar::after {
+    background: var(--bg-bar);
+    height: var(--bar-hamburguer-height);
+    width: var(--bar-hamburguer-width);
+    transition: all .5s ease-in-out;
+    border-radius: 50px;
+}
+
+.btn-hamburguer .bar {
+    position: relative;
+}
+
+.btn-hamburguer .bar::after,
+.btn-hamburguer .bar::before {
+    content: '';
+    left: -50%;
+    margin-left: calc(var(--bar-hamburguer-width) / 2);
+    position: absolute;
+}
+
+.btn-hamburguer .bar::after {
+    top: var(--bar-separation);
+}
+
+.btn-hamburguer .bar::before {
+    bottom: var(--bar-separation);
+}
+
+.btn-hamburguer.active .bar {
+    background: transparent;
+    transform: translateX(50px);
+}
+
+
+.btn-hamburguer.active .bar::after {
+    transform: translateX(-50px) rotate(45deg);
+    top: 0;
+}
+
+.btn-hamburguer.active .bar::before {
+    transform: translateX(-50px) rotate(-45deg);
+    bottom: 0;
+}
+
+/* .btn-hamburguer.active {
+    background: #f2f2f2;
+} */
+
+/* .btn-hamburguer.active .bar::after,
+.btn-hamburguer.active .bar::before {
+    background: #333;
+} */
+
+@media screen and (max-width: 1028px) {
+    section .row .col-2 .card {
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    section .row {
+        flex-direction: column;
+        height: auto;
+    }
+
+
+    section .row .col-1 {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    section .row .col-2 {
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    section .row .col-2 .banner {
+        width: 100%;
+        height: 400px;
+        background-size: 100%;
+        background-position: center;
+    }
+
+    section .row .col-2 .card {
+        right: 20px;
+    }
+
+    footer {
+        height: 60px;
+        bottom: -20%;
+    }
+}
+
+@media screen and (max-width: 890px) {
+
+    section .row .col-2 {
+        width: 100%;
+    }
+
+    section .row .col-2 .card {
+        width: auto;
+        padding-right: 100px;
+    }
+}
+
+@media screen and (max-width: 644px) {
+    nav .nav-link {
+        position: fixed;
+        left: 100%;
+        top: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: var(--black);
+        z-index: 5;
+    }
+
+    nav .nav-link a {
+        margin: 20px 0;
+    }
+
+    .btn-hamburguer {
+        display: flex;
+    }
+}
